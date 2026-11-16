@@ -23,14 +23,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/fsddb");
+mongoose.connect("mongodb://127.0.0.1:27017/efsddb");
 
 // User collection
 const userSchema = new mongoose.Schema({
     username: String,
     password: String,
    });
-const User = mongoose.model("cuser", userSchema);
+const User = mongoose.model("user", userSchema);
 
 // Login API
 app.post("/login", async (req, res) => {
